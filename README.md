@@ -8,11 +8,12 @@ When you run an api script via this utility it will
 - remove the docker container
 
 
-
-
-# CREATE DOCKER
+# CREATE DOCKER IMAGE
 - Update package.json with addition libs that you will use
-- "sudo make" (to run on local machine) or "sudo make tar" (to copy docker image to other machine)
+- Run make
+ 
+	if you are going to run locally, then "sudo make"
+	if you are going to deploy to another machine, then "sudo make tar"
 
 # SET CONNECTION DETAILS
 - update scripts/env.sh with your mamori server connection details
@@ -26,4 +27,12 @@ To run a script call the run_docker script passing in the script name and the pa
 
 sudo ./scripts/run_docker.sh -f sample-script -l /root/logs
 
+# DEPLOYING TO ANOTHER MACHINE
+
+If you want to run this on another server that sever will need docker
+- copy mamori-api-runner.tgz and scripts directory to the target machine
+- install docker "sudo curl https://get.docker.com | sh"
+- load the image "sudo docker load < mamori-api-runner.tgz"
+- create a logs directory
+- run the script as per the instructions above
 
