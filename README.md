@@ -1,3 +1,14 @@
+#OVERVIEW
+
+This project is for running js code that will make use of the mamori api.
+
+When you run an api script via this utility it will 
+- spin up a docker container with node and your libs
+- execute the script
+- remove the docker container
+
+
+
 
 # CREATE DOCKER
 - Update package.json with addition libs that you will use
